@@ -1,4 +1,5 @@
 #' Reads All Package-Installed Lua Scripts
+#' @param package Name of installed package
 #' @param ... Script base-name filters; reads \emph{all} scripts if no filters
 #' @return Named list of character vectors after reading the package-installed
 #'   Lua scripts. The names exclude the package path and the \code{lua}

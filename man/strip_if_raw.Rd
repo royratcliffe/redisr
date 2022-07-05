@@ -22,6 +22,7 @@ Stripped raw vector else unchanged
 Strips if and only if raw.
 }
 \examples{
+library(redisr)
 strip_if_raw(c(charToRaw("X\n"), as.raw(0L)))
 #> raw(0)
 }

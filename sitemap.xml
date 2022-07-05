@@ -16,6 +16,9 @@
     <loc>/index.html</loc>
   </url>
   <url>
+    <loc>/reference/eval_sha.html</loc>
+  </url>
+  <url>
     <loc>/reference/hi.html</loc>
   </url>
   <url>
@@ -23,6 +26,9 @@
   </url>
   <url>
     <loc>/reference/inst.lua.html</loc>
+  </url>
+  <url>
+    <loc>/reference/pipe.html</loc>
   </url>
   <url>
     <loc>/reference/read.inst_lua.html</loc>
@@ -35,5 +41,11 @@
   </url>
   <url>
     <loc>/reference/scripts.html</loc>
+  </url>
+  <url>
+    <loc>/reference/strip.raw.html</loc>
+  </url>
+  <url>
+    <loc>/reference/strip_if_raw.html</loc>
   </url>
 </urlset>

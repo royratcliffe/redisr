@@ -14,7 +14,7 @@ script_load.evalsha(named_scripts, redis = hi(), ...)
 \item{...}{
   Arguments passed on to \code{\link[=scripts]{scripts}}
   \describe{
-    \item{\code{x}}{Redis interface}
+    \item{\code{x}}{Redis high-level interface}
   }}
 }
 \value{

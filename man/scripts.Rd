@@ -2,15 +2,19 @@
 % Please edit documentation in R/scripts.R
 \name{scripts}
 \alias{scripts}
-\title{Redis High-Level Interface Lua Scripts}
+\title{Redis High-Level Interface to Lua Scripts}
 \usage{
 scripts(x, ...)
 }
 \arguments{
-\item{x}{Redis interface}
+\item{x}{Redis high-level interface}
 
-\item{...}{Extra parameters}
+\item{...}{Extra parameters, including:
+\itemize{
+\item \code{scripts} for named Lua scripts to load
+}}
 }
 \description{
-Redis High-Level Interface Lua Scripts
+Loads a list of scripts by name and SHA ready for subsequent
+evaluation.
 }

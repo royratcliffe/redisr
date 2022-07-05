@@ -1,3 +1,3 @@
 local env = {}
 assert(pcall(setfenv(assert(loadstring(unpack(ARGV))), env)))
-return cmsgpack.pack(env)
+return "X\n\0"..cmsgpack.pack(env)

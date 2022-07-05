@@ -18,6 +18,5 @@ Stripped raw vector
 Useful for handling raw reply vectors.
 }
 \examples{
-library(redisr)
 strip.raw(c(charToRaw("X\n"), as.raw(0), charToRaw("abc")))
 }

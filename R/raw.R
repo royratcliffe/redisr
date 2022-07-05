@@ -5,7 +5,6 @@
 #' @return Stripped raw vector
 #' @export
 #' @examples
-#' library(redisr)
 #' strip.raw(c(charToRaw("X\n"), as.raw(0), charToRaw("abc")))
 strip.raw <- function(x, pre = c(charToRaw("X\n"), as.raw(0L))) {
   len <- length(pre)
@@ -19,7 +18,6 @@ strip.raw <- function(x, pre = c(charToRaw("X\n"), as.raw(0L))) {
 #' @return Stripped raw vector else unchanged
 #' @export
 #' @examples
-#' library(redisr)
 #' strip_if_raw(c(charToRaw("X\n"), as.raw(0L)))
 #' #> raw(0)
 strip_if_raw <- function(x, ...) {

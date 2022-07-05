@@ -92,10 +92,39 @@ function serialise.table(value, index, indent, offset)
   return chunk.."}"
 end
 
-local env = {}
+local keys = {
+  GET = function(arg)
+    return redis.call("GET", arg)
+  end,
+  STRUCT = function(arg)
+    return struct.unpack(arg)
+  end,
+  CJSON = function(arg)
+    return cjson.decode(arg)
+  end,
+  CMSGPACK = function(arg)
+    return cmsgpack.unpack(arg)
+  end,
+  SERIALISE = function(arg, key)
+    return serialise.any(arg, key)
+  end,
+  LOADSTRING = function(arg)
+    local env = {}
+    setfenv(assert(loadstring(arg)), env)()
+    return env
+  end
+}
+
+local results = {}
 
 for _, arg in ipairs(ARGV) do
-  setfenv(assert(loadstring(arg)), env)()
+  local args = {arg}
+  for _, key in ipairs(KEYS) do
+    local calling = keys[key]
+    if calling then args = {calling(unpack(args))}
+    else table.insert(args, key) end
+  end
+  table.insert(results, args[1])
 end
 
-return serialise.any(env, unpack(KEYS))
+return #results == 1 and results[1] or results

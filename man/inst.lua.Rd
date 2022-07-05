@@ -10,7 +10,7 @@ inst.lua(...)
 \item{...}{
   Arguments passed on to \code{\link[=read.inst_lua]{read.inst_lua}}
   \describe{
-    \item{\code{}}{}
+    \item{\code{package}}{Name of installed package}
   }}
 }
 \description{
@@ -20,7 +20,12 @@ Loads Installed Lua Scripts for Evaluation
 \dontrun{
 library(magrittr)
 lua <- inst.lua()
-lua("cmsgpack-pack-fenv",, "a = 1") \%>\% charToRaw()
+lua$cmsgpack.pack_fenv(NULL, "a = 1") \%>\% strip.raw()
 #> [1] 81 a1 61 01
+lua$cmsgpack.pack_fenv(NULL, "hello = 123.456") \%>\%
+  strip.raw() \%>\%
+  RcppMsgPack::msgpack_unpack(simplify = TRUE)
+#>   hello
+#> 123.456
 }
 }

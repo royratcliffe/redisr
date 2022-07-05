@@ -4,10 +4,12 @@
 \alias{read.inst_lua}
 \title{Reads All Package-Installed Lua Scripts}
 \usage{
-read.inst_lua(package = "redisr", ...)
+read.inst_lua(..., package = "redisr")
 }
 \arguments{
 \item{...}{Script base-name filters; reads \emph{all} scripts if no filters}
+
+\item{package}{Name of installed package}
 }
 \value{
 Named list of character vectors after reading the package-installed

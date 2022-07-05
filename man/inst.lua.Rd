@@ -10,7 +10,7 @@ inst.lua(...)
 \item{...}{
   Arguments passed on to \code{\link[=read.inst_lua]{read.inst_lua}}
   \describe{
-    \item{\code{package}}{Name of installed package}
+    \item{\code{}}{}
   }}
 }
 \description{

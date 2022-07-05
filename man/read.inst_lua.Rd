@@ -7,8 +7,6 @@
 read.inst_lua(package = "redisr", ...)
 }
 \arguments{
-\item{package}{Name of installed package}
-
 \item{...}{Script base-name filters; reads \emph{all} scripts if no filters}
 }
 \value{

@@ -10,12 +10,6 @@ script_load.evalsha(named_scripts, redis = hi(), ...)
 \item{named_scripts}{Named list of Lua scripts}
 
 \item{redis}{High-level Redis interface}
-
-\item{...}{
-  Arguments passed on to \code{\link[=scripts]{scripts}}
-  \describe{
-    \item{\code{x}}{Redis interface}
-  }}
 }
 \value{
 SHA evaluate function accepting script name, key vector and argument

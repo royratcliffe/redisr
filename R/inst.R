@@ -1,11 +1,11 @@
 #' Reads All Package-Installed Lua Scripts
-#' @param package Name of installed package
 #' @param ... Script base-name filters; reads \emph{all} scripts if no filters
+#' @param package Name of installed package
 #' @return Named list of character vectors after reading the package-installed
 #'   Lua scripts. The names exclude the package path and the \code{lua}
 #'   file-name extension.
 #' @export
-read.inst_lua <- function(package = "redisr", ...) {
+read.inst_lua <- function(..., package = "redisr") {
   inst.lua <- system.file("lua", package = package)
   files <- list.files(inst.lua, "\\.lua$", full.names = TRUE)
   names(files) <- basename(tools::file_path_sans_ext(files))

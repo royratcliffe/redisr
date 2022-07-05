@@ -8,7 +8,6 @@
 #'
 #' @param named_scripts Named list of Lua scripts
 #' @param redis High-level Redis interface
-#' @inheritDotParams scripts
 #' @return SHA evaluate function accepting script name, key vector and argument
 #'   vector in that order; the name becomes the Lua script SHA by look-up
 #' @export

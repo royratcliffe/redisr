@@ -30,3 +30,7 @@ redis$PING()
 #> [Redis: PONG]
 }
 }
+\seealso{
+\link[https://github.com/redis/hiredis]{Minimalistic C client
+library for the Redis database}
+}

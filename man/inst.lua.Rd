@@ -27,5 +27,9 @@ lua$cmsgpack.pack_fenv(NULL, "hello = 123.456") \%>\%
   RcppMsgPack::msgpack_unpack(simplify = TRUE)
 #>   hello
 #> 123.456
+lua$serialise(c("x", "\t", "\t"), "a=1") \%>\% cat()
+#> x = {
+#>   a = 1
+#> }
 }
 }

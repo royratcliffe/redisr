@@ -22,3 +22,16 @@
 script_load.evalsha <- function(named_scripts, redis = hi(), ...) {
   scripts(redis, ..., scripts = named_scripts)
 }
+
+#' Load Scripts by SHA for Evaluation
+#' @param named_scripts Named list of Lua scripts
+#' @inheritDotParams script_load.evalsha
+#' @return List of named wrapper functions, one per Lua script
+#' @export
+eval_sha <- function(named_scripts, ...) {
+  sha <- script_load.evalsha(named_scripts, ...)
+  eval_sha <- lapply(names(named_scripts), function(x)
+    function(keys, args) sha(x, keys, args))
+  names(eval_sha) <- names(named_scripts)
+  eval_sha
+}

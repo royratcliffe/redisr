@@ -28,6 +28,10 @@ read.inst_lua <- function(..., package = "redisr") {
 #'   RcppMsgPack::msgpack_unpack(simplify = TRUE)
 #' #>   hello
 #' #> 123.456
+#' lua$serialise(c("x", "\t", "\t"), "a=1") %>% cat()
+#' #> x = {
+#' #>   a = 1
+#' #> }
 #' }
 inst.lua <- function(...) {
   eval_sha(read.inst_lua(...))

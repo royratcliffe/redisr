@@ -21,9 +21,14 @@ read.inst_lua <- function(..., package = "redisr") {
 #' \dontrun{
 #' library(magrittr)
 #' lua <- inst.lua()
-#' lua("cmsgpack-pack-fenv",, "a = 1") %>% charToRaw()
+#' lua$cmsgpack.pack_fenv(NULL, "a = 1") %>% strip.raw()
 #' #> [1] 81 a1 61 01
+#' lua$cmsgpack.pack_fenv(NULL, "hello = 123.456") %>%
+#'   strip.raw() %>%
+#'   RcppMsgPack::msgpack_unpack(simplify = TRUE)
+#' #>   hello
+#' #> 123.456
 #' }
 inst.lua <- function(...) {
-  script_load.evalsha(read.inst_lua(...))
+  eval_sha(read.inst_lua(...))
 }

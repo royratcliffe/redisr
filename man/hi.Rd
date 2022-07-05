@@ -31,6 +31,6 @@ redis$PING()
 }
 }
 \seealso{
-\link[https://github.com/redis/hiredis]{Minimalistic C client
+\href{https://github.com/redis/hiredis}{Minimalistic C client
 library for the Redis database}
 }

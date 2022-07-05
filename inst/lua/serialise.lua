@@ -86,7 +86,9 @@ function serialise.table(value, index, indent, offset)
     if indices.string then sort(indices.string) end
   end
   local chunk = indentindex(index, indent).."{"
-  if #chunks > 0 then chunk = chunk.."\n"..table.concat(chunks, ",\n").."\n"..indent end
+  if #chunks > 0 then
+    chunk = chunk.."\n"..table.concat(chunks, ",\n").."\n"..indent
+  end
   return chunk.."}"
 end
 

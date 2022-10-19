@@ -1,4 +1,6 @@
 #' Character to Redis Stream Identifier
+#' @details Stops if the given character vector of one element fails to match
+#'   stream identifier expectations.
 #' @param x Character vector of length 1.
 #' @return Redis stream identifier, the same character vector of length 1 but
 #'   with class \code{redis_stream_id}.
